@@ -2,15 +2,21 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build and run",
+            "label": "build",
             "type": "shell",
-            "command": "${workspaceFolder}/.vscode/run.bat",
+            "command": "g++",
+            "args": [
+                "-g",  // Include debugging symbols
+                "${workspaceFolder}/*.cpp",  // Compile all .cpp files in the workspace
+                "-o",
+                "${workspaceFolder}/a.exe"  // Output executable named 'a.exe'
+            ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             },
             "problemMatcher": ["$gcc"],
-            "detail": "Generated task by debugging."
+            "detail": "Generated task for compiling C++ files."
         }
     ]
 }
